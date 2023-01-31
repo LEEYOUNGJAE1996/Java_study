@@ -7,11 +7,13 @@ public class Music {
     private String title;
     private String singer;
     private int playTime;
+    private String filePath; // mp3파일 경로
 
-    public Music(String title, String singer, int playTime) {
+    public Music(String title, String singer, int playTime, String filePath) {
         this.title = title;
         this.singer = singer;
         this.playTime = playTime;
+        this.filePath = filePath;
     }
 
     public String getTitle() {
@@ -24,5 +26,9 @@ public class Music {
 
     public int getPlayTime() {
         return playTime;
+    }
+
+    public String getFilePath() {
+        return filePath;
     }
 }
