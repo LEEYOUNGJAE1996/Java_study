@@ -12,7 +12,7 @@ public class Main {
         // 프로그램 구동 및 상호소통(with 사용자)
         Scanner sc = new Scanner(System.in);
         System.out.println("=====Music Player=====");
-        MusicPlayer mp = new MusicPlayer();
+        MusicPlayer mp = new MusicPlayer("C:\\Users\\young\\OneDrive\\바탕 화면\\MusicInfo.txt");
         while (true) {
             System.out.println("[1] Play [2] Pause [3]Previous [4]Next [5]Exit ");
             int choice = sc.nextInt();
@@ -24,8 +24,6 @@ public class Main {
                 System.out.println("play time : " + m.getPlayTime());
             } else if (choice == 2) {
                 mp.stop();
-                System.out.println("STOP \tSTOP \tSTOP \tSTOP \tSTOP \tSTOP \tSTOP \tSTOP \t");
-                System.out.println("STOP \tSTOP \tSTOP \tSTOP \tSTOP \tSTOP \tSTOP \tSTOP \t");
                 System.out.println("STOP \tSTOP \tSTOP \tSTOP \tSTOP \tSTOP \tSTOP \tSTOP \t");
             } else if (choice == 3) {
                 Music m = mp.previous();
