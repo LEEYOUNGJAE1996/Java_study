@@ -1,6 +1,6 @@
 package java0131_ex02;
 
-public class Rectangle extends AreaCalculator {
+public class Rectangle extends Figure {
     private double width, height;
 
     public Rectangle() {
@@ -21,6 +21,7 @@ public class Rectangle extends AreaCalculator {
         return this.height;
     }
 
+    // upcasting 활용을 위한 예시
     public double area() {
         return width * height;
     }
