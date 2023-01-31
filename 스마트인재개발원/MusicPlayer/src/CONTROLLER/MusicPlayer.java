@@ -39,7 +39,7 @@ public class MusicPlayer {
     }
 
     public Music previous() {
-        if (index_1 > 0) {
+        if (index_1 != 0) {
             index_1--;
         } else {
             index_1 = musicList.size() - 1;
@@ -49,7 +49,7 @@ public class MusicPlayer {
     }
 
     public Music next() {
-        if (index_1 < musicList.size() - 1) {
+        if (index_1 != musicList.size() - 1) {
             index_1++;
         } else {
             index_1 = 0;
