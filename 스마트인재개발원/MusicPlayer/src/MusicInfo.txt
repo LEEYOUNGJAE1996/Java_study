@@ -1,0 +1,5 @@
+HypeBoy,뉴진스,46,C:\\Users\\young\\OneDrive\\바탕 화면\\mp3\\뉴진스-HypeBoy.mp3
+Antifragile,르세라핌,36,C:\\Users\\young\\OneDrive\\바탕 화면\\mp3\\르세라핌-Antifragile.mp3
+LoveDive,아이브,41,C:\\Users\\young\\OneDrive\\바탕 화면\\mp3\\아이브-LoveDive.mp3
+사건의지평선,윤하,48,C:\\Users\\young\\OneDrive\\바탕 화면\\mp3\\윤하-사건의지평선.mp3
+WhenIMove,카라,21,C:\\Users\\young\\OneDrive\\바탕 화면\\mp3\\카라-WhenIMove.mp3

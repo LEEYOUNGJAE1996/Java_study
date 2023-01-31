@@ -1,7 +1,9 @@
 package CONTROLLER;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -41,15 +43,18 @@ public class MusicPlayer {
         // 자바에서 경로를 지정 함으로서 접근 가능하게 하는 객체
         File infoFile = new File(infoFilePath);
         // 경로가 잘못된 경우 읽을 수 없는 문제가 발생
+        System.out.println("파일 객체 생성" + infoFilePath);
 
         // 문법적인 오류가 아닌 실행 중 에러가 발생하는 경우 예외를 처리하기 위한 문법 try catch
         try {
-            Scanner scan = new Scanner(infoFile);
+            Scanner sc = new Scanner(new InputStreamReader(new FileInputStream(infoFile)));
             // 데이터 읽기
-
+            System.out.println("스캐너 객체 생성 " + sc);
+            System.out.println(sc.hasNext());
             // 읽을 데이터가 계속 존재하는지 확인하는 .hasNext()
-            while (scan.hasNext()) {
-                String infoSong = scan.nextLine(); // 하나의 줄에 들어있는 정보를 전부 읽는 nextLIne()
+            while (sc.hasNext()) {
+                System.out.println("파일 입력이 존재합니다.");
+                String infoSong = sc.nextLine(); // 하나의 줄에 들어있는 정보를 전부 읽는 nextLIne()
                 // spilt 문법 .split("") -> "" 안에 문자를 기준으로 문자열을 쪼갠다.
                 String[] arr = infoSong.split(",");
                 // 문자열을 숫자로 바꾸는 문법 Integer.parseInt
