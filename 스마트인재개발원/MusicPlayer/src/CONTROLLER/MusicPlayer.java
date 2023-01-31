@@ -33,10 +33,7 @@ public class MusicPlayer {
 
     public Music play() {
         Music m = musicList.get(index_1);
-        if (mp3.isPlaying()) {
-            mp3.stop();
-        }
-        mp3.play(m.getFilePath());
+        playButton(m);
         return m;
     }
 
@@ -53,10 +50,7 @@ public class MusicPlayer {
             index_1 = musicList.size() - 1;
         }
         Music m = musicList.get(index_1);
-        if (mp3.isPlaying()) {
-            mp3.stop();
-        }
-        mp3.play(m.getFilePath());
+        playButton(m);
         return m;
     }
 
@@ -67,10 +61,14 @@ public class MusicPlayer {
             index_1 = 0;
         }
         Music m = musicList.get(index_1);
+        playButton(m);
+        return m;
+    }
+
+    private void playButton(Music m) {
         if (mp3.isPlaying()) {
             mp3.stop();
         }
         mp3.play(m.getFilePath());
-        return m;
     }
 }
