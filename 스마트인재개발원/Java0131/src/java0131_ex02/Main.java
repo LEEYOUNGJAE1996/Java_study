@@ -10,7 +10,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-            System.out.print("1.사각형 2.삼각형 3. 종료 >> ");
+            System.out.print("1.사각형 2.삼각형 3. 원 4. 종료 >> ");
             int choice = sc.nextInt();
             AreaCalculator area = new AreaCalculator();
             Figure area_up = new Figure();
@@ -40,6 +40,12 @@ public class Main {
                 System.out.println("넓이 : " + area_up.area());
                 System.out.println("넓이 : " + area.calArea(tri));
                 // upcasting 활용 예시
+                System.out.println("넓이 : " + area.calArea(area_up));
+
+            } else if (choice == 3) {
+                System.out.print("반지름 입력 : ");
+                double radius = sc.nextDouble();
+                area_up = new Circle(radius);
                 System.out.println("넓이 : " + area.calArea(area_up));
 
             } else {
