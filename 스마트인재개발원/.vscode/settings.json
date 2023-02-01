@@ -1,0 +1,6 @@
+{
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "c:\\Users\\young\\OneDrive\\바탕 화면\\mp3\\player.jar"
+  ]
+}
