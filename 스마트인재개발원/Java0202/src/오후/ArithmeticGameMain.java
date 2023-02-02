@@ -7,11 +7,6 @@ public class ArithmeticGameMain {
 	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		GameDummy gm = new GameDummy();
-		// PlusGame pg = new PlusGame();
-		MinusGame mg = new MinusGame();
-		MulGame mulg = new MulGame();
-		DivideGame dg = new DivideGame();
 
 		System.out.println("=====사칙연산 게임=====");
 		System.out.print("[1]덧셈 [2]뺄셈 [3]곱하기 [4]나누기 >>");
