@@ -1,11 +1,11 @@
-package 오후;
+package ex;
 
-public class GameDummy implements IGame{
+public class GameDummy implements IGame {
 
 	@Override
 	public void makeRandom() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -20,6 +20,4 @@ public class GameDummy implements IGame{
 		return false;
 	}
 
-	
-	
 }
