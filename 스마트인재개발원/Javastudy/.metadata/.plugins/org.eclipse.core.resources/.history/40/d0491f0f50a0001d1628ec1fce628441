@@ -1,0 +1,43 @@
+package java0130_ex01;
+
+public class BookManagement {
+	private static int bookId =100; //각 책을 구분하는 번호
+	private int id ; 
+	private String title ;
+	private int price;
+	private String writer;
+	
+	public BookManagement() {
+		System.out.println("객체 생성");
+	} 
+	public BookManagement(String title, String writer , int price) {
+		this.price =price;
+		this.title = title;
+		this.writer = writer;
+		this.id = bookId;
+		bookId++;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	
+	
+	
+	
+	
+}

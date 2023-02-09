@@ -1,0 +1,80 @@
+package java0127ex02;
+
+import java.util.Scanner;
+
+public class Simulator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int choice;
+		PersonalInfo[] info = new PersonalInfo[5];
+//
+//		info[0] = new PersonalInfo("이영재", "010", "인천", 0);
+//		info[1] = new PersonalInfo("박효정", "010", "광주", 1);
+//		info[2] = new PersonalInfo("공희경", "010", "서울", 2);
+//		info[3] = new PersonalInfo("김성호", "010", "경기", 3);
+//		info[4] = new PersonalInfo("허재욱", "010", "제주", 4);
+
+		System.out.println("연락처 관리 프로그램");
+		while (true) {
+			System.out.println("1.등록 2.전체 조회 3.상세보기 4.종료");
+			System.out.print("번호입력 >>");
+			choice = sc.nextInt();
+			int index = 0;
+			
+			if (choice == 1) {
+				System.out.println("등록하는 과정입니다.");
+				if(index >= info.length) {
+					System.out.println("저장 공간이 부족합니다.");
+					continue;
+				}
+				System.out.print("이름을 입력하세요 >> ");
+				String name = sc.next();
+//				info[index].setName(sc.next());
+				System.out.print("전화번호를 입력하세요 >> ");
+				String tel = sc.next();
+//				info[index].setPhoneNumber(sc.next());
+				System.out.print("주소를 입력하세요 >> ");
+				String addr = sc.nextLine();
+//				info[index].setAddress(sc.next());
+//				System.out.print("사용하실 아이디 숫자 4~6자리를 입력하세요 >> ");
+//				info[index].setId(sc.nextInt());
+				PersonalInfo p = new PersonalInfo( name , tel,addr,index +1);
+				info[index] = p;
+				index++;
+				
+			} else if (choice == 2) {
+				System.out.println("모든 사람을 출력합니다.");
+				for (int i = 0; i < index; i++) {
+					System.out.println((i+1) + ". name : " + info[i].getName() + " H.P. : " + info[i].getPhoneNumber()
+							+ " address : " + info[i].getaddress());
+				}
+			} else if (choice == 3) {
+				for (int i = 0; i < 5; i++) {
+					System.out.println((i+1) + "번째에 name : " + info[i].getName());
+				}
+				System.out.println("몇 번째 사람을 보고 싶습니까? >> ");
+				int choice2 = sc.nextInt();
+				if(choice2 < index) {
+					PersonalInfo temp = info[choice2 -1];
+					System.out.println("name :" + temp.getName());
+					System.out.println("id :" + temp.getId());
+					System.out.println("H.P. :" + temp.getPhoneNumber());
+					System.out.println("address :" + temp.getaddress());		
+				} else {
+					System.out.println("잘못입력하셨습니다.");
+				}
+			} else if (choice == 4) {
+				System.out.println("프로그램 종료");
+				break;
+			} else {
+
+			}
+
+		}
+
+		sc.close();
+	}
+
+}

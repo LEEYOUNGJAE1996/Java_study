@@ -1,0 +1,7 @@
+package java0130_ex04;
+
+public class B {
+	public void pick() {
+		System.out.println("BBB");
+	}
+}

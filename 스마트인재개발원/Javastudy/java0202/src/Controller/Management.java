@@ -1,0 +1,44 @@
+package Controller;
+//user가 요청한 값이 있다면 컨트롤러에서 DAO로 연결 또는 값을 전달 하는 역할
+//user가 사용하는 화면에 보여줄 필요가 없는 로직을 제어 --> 사용자가 view에서 직관적으로 알 수 있도록 함
+//View가 가벼워짐
+
+import Model.MemberDAO;
+import Model.MemberDTO;
+
+public class Management {
+
+	//DTO에 접근 할 수 있는 객체 생성
+	 private MemberDTO dto = null;
+
+	//DAO 접근 할 수 있는 객체 생성
+	private MemberDAO dao = new MemberDAO();
+	
+	
+	//1. 로그인
+	public String LoginCon(String id, String pw) {
+		dto = new MemberDTO(id,pw);
+		if (dao.logIn(dto)) {
+			return "로그인에 성공했습니다.";
+		} else {
+			return "로그인에 실패했습니다.";
+		}
+		
+	}
+	//2.회원가입
+	public int insertCon(String id, String pw , String name , int age) {
+		dto = new MemberDTO(id, pw, name, age);
+
+		int cnt = dao.insert(dto);
+		return cnt;
+	}
+	//3.수정
+	
+	//4.조회
+	
+	//5.회원탈퇴
+	
+	
+	
+
+}

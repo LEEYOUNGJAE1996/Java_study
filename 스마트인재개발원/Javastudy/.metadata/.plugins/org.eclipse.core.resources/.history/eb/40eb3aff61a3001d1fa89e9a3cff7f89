@@ -1,0 +1,86 @@
+package View;
+
+import java.util.Scanner;
+
+import Model.MemberDAO;
+import Model.MemberDTO;
+
+//DTO --> data tarnsfer objects -->  member 테이블의 data를 사용자와 주고 받는 용도
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 어떤 형태로 화면을 구성할 것인가?
+		Scanner sc = new Scanner(System.in);
+		MemberDTO dto = null;
+		MemberDAO dao = new MemberDAO();
+
+		System.out.println("====IoT융합 SW 전문가 과정=====");
+
+		System.out.println("\n메뉴를 입력하세요");
+		while (true) {
+			System.out.println("[1]로그인 [2]회원가입 [3]정보수정 [4]조회 [5]회원탈퇴 [6]종료 >>");
+			int menu = sc.nextInt();
+			
+			if (menu == 1) {
+					//로그인
+				System.out.print("ID : ");
+				String id = sc.next();
+				System.out.print("PW : ");
+				String pw = sc.next();
+				dto = new MemberDTO(id, pw);
+				
+				if(dao.logIn(dto)) {
+					System.out.println("로그인에 성공했습니다.");
+				} else {
+					System.out.println("로그인에 실패했습니다.");
+				}
+				
+				
+			} else if (menu == 2) {
+				System.out.print("ID : ");
+				String id = sc.next();
+				System.out.print("PW : ");
+				String pw = sc.next();
+				System.out.print("Name : ");
+				String name = sc.next();
+				System.out.print("Age : ");
+				int age = sc.nextInt();
+
+				dto = new MemberDTO(id, pw, name, age);
+				
+				int cnt = dao.insert(dto);
+				if (cnt > 0) {
+					System.out.println("회원가입 성공");
+				} else {
+					System.out.println("회원가입 실패");
+				}
+			} else if (menu == 3) {
+				
+			} else if (menu == 4) {
+				System.out.print("[1] 전체 조회 [2] 선택 조회 >> ");
+				int choice = sc.nextInt();
+				if(choice == 1 ) {
+					// 전체 출력 메소드
+				} else if(choice == 2 ) {
+					// 부분 출력 메소드
+					System.out.print("ID를 입력해주세요 >>");
+					String id = sc.next();
+					dto = new MemberDTO(id);
+				}
+			} else if (menu == 5) {
+
+			} else if (menu == 6) {
+				System.out.println("시스템을 종료합니다.");
+				break;
+			} else {
+				System.out.println("잘못된 접근입니다.");
+			}
+
+		}
+
+		sc.close();
+
+	}
+
+}

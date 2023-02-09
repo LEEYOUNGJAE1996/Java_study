@@ -1,0 +1,7 @@
+package JDBC;
+
+public class Ex01_Insert {
+	public static void main(String[] args) {
+		//ㅎ회원가입
+	}
+}

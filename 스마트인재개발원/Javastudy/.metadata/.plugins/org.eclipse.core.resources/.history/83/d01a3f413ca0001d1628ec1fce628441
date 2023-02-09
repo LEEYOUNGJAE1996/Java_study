@@ -1,0 +1,20 @@
+package java0130_ex01;
+
+import java.util.ArrayList;
+
+public class Simulator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//도서관리 프로그램
+		// 1. 등록 2.삭제 3. 도서 전체 조회 4. 상세조회 5.종료
+		ArrayList<BookManagement> arlist = new ArrayList<BookManagement>();
+		
+		
+		
+		
+		
+		
+	}
+
+}

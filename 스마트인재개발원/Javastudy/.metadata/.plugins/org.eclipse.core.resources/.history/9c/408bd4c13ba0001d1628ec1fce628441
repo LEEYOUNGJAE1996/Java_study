@@ -1,0 +1,10 @@
+package java0130_ex01;
+
+public class Simulator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

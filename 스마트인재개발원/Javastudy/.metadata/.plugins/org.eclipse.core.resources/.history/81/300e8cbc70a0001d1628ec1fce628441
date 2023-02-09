@@ -1,0 +1,26 @@
+package java0130_ex02;
+
+import javax.management.ListenerNotFoundException;
+
+public class Simulator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Mouse mouse = new Mouse();
+		
+		mouse.leftClick();
+		mouse.rightClick();
+		
+		WheelMouse wm = new WheelMouse();
+		wm.leftClick();
+		wm.rightClick();
+		wm.scrollDown();
+		wm.scrollUp();
+		
+		Ergonomics er = new Ergonomics();
+		er.leftClick();
+		er.rightClick();
+		er.reduce_fatigue();
+	}
+
+}

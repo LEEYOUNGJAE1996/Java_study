@@ -1,0 +1,76 @@
+package java0130_ex01;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Simulator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 도서관리 프로그램
+		// 1. 등록 2.삭제 3. 도서 전체 조회 4. 상세조회 5.종료
+		ArrayList<BookManagement> arlist = new ArrayList<BookManagement>();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("========도서관리 프로그램입=========");
+		int choice = 1;
+		while (true) {
+			System.out.println("1. 등록 2.도서 전체 조회 3. 상세 조회 4. 삭제 5.종료 ");
+			System.out.print("번호 입력 >> ");
+			choice = sc.nextInt();
+			if (choice == 1) {
+				System.out.println("책 등록을 시작합니다.");
+				System.out.println("책의 이름을 입력하세요");
+				sc.nextLine();
+				String title = sc.nextLine();
+				System.out.println("책의 저자를 입력하세요");
+				String writer = sc.nextLine();
+				System.out.println("책의 가격을 입력하세요");
+				int price = sc.nextInt();
+				BookManagement temp = new BookManagement(title,writer,price);
+				arlist.add(temp);
+				
+			} else if (choice == 2) {
+				for(int i = 0 ; i < arlist.size() ; i++) {
+					System.out.println((i+1)+". Title : " + arlist.get(i).getTitle());
+				}
+			} else if (choice == 3) {
+				System.out.println("책 목록");
+				
+				for(int i = 0 ; i < arlist.size() ; i++) {
+					System.out.println("Title : " + arlist.get(i).getTitle());
+				}
+				System.out.println("몇 번째 책을 상세 조회하시겠습니까?");
+				int index = sc.nextInt();
+				System.out.println("Title : " + arlist.get(index-1).getTitle()
+								 + "Writer : " + arlist.get(index-1).getWriter()
+								 + "Price : " + arlist.get(index-1).getPrice());
+				
+			} else if (choice == 4) {
+				System.out.println("1.전체 삭제 2. 선택 삭제");
+				int choice_temp = sc.nextInt();
+				if(choice_temp == 1) {
+					arlist.clear();
+					System.out.println("전체 삭제했습니다.");
+				} else if(choice_temp ==2) {
+					System.out.println();
+
+					for(int i = 0 ; i < arlist.size() ; i++) {
+						System.out.println("Title : " + arlist.get(i).getTitle());
+					}
+					System.out.println("몇 번째 책을 삭제하시겠습니까?");
+					choice_temp =sc.nextInt();
+					arlist.remove(choice_temp);
+				}
+			} else if (choice == 5) {
+				System.out.println("프로그램을 종료합니다.");
+				break;
+			} else {
+				System.out.println("잘못입력하셨습니다.");
+			}
+
+		}
+
+		sc.close();
+	}
+
+}

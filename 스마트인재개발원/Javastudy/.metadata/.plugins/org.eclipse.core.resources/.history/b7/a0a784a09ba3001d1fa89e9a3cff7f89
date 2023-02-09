@@ -1,0 +1,8 @@
+package Model;
+
+public class Student {
+	public static void main(String[] args) {
+	int a = 0;
+	System.out.println("야호 또 올림");
+	}
+}

@@ -1,0 +1,11 @@
+package JDBC;
+
+public class Ex02_Update {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 회원 정보 수정
+		
+	}
+
+}

@@ -1,0 +1,50 @@
+package java0130_ex04;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//인형 뽑기 기계
+
+		A a = new A();
+		B b = new B();
+		C c = new C();
+		
+		
+		Machine(a);
+		Machine(b);
+		Machine(c);
+		
+		
+		
+		
+		
+		
+	
+	}
+	// Alphabet alph = a; //upcasting
+	public static void Machine(Alphabet alph) {
+		if(alph instanceof A) {
+			System.out.println("A");
+		}
+		else if(alph instanceof B) {
+			System.out.println("B");
+		}
+		else if(alph instanceof C) {
+			System.out.println("C");
+		} else {
+			System.out.println("실패");
+		}
+	//	alph.pick();
+	}
+//	public static void Machine(A doll) {
+//		doll.pick();
+//	}
+//	public static void Machine(B doll) {
+//		doll.pick();
+//	}
+//	public static void Machine(C doll) {
+//		doll.pick();
+//	}
+	
+}
